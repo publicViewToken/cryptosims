@@ -201,7 +201,7 @@ class App extends Component {
 
 
 
-          <div  className="mr-3 ml-auto addresscolor ">
+          <div  className="mr-3 ml-auto  container-fluid mt-5 ">
 
           <h5>Sim Name</h5>
       <h4>  </h4>
