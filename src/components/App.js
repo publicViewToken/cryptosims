@@ -133,8 +133,8 @@ class App extends Component {
      
 
       
-        <nav className="navbar navbar-light fixed-top bg-light flex-md-nowrap p-0 shadow">
-          <a  style={{ backgroundColor:"#FFB261" }}
+        <nav className="navbar navbar-light fixed-top bg-light flex-md-nowrap p-0 ">
+          <a  style={{ backgroundColor:"#c8bbb1" }}
             className="navbar-brand col-sm-3 col-md-2 mr-0"
             href="https://twitter.com/DigitalPets1" // change to twitter address
             target="_blank"
@@ -144,39 +144,7 @@ class App extends Component {
             <div className="text-white">Crypto Sims</div>
 
           
-          </a>
-
-           <a  style={{ backgroundColor:"#FFB261" }}
-            className="navbar-brand col-sm-3 col-md-2 mr-0"
-            href="https://twitter.com/DigitalPets1" // change to twitter address
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-           <div className="text-white">Like Sim</div>
-
-          
-          </a>
-              <a  style={{ backgroundColor:"#FFB261" }}
-            className="navbar-brand col-sm-3 col-md-2 mr-0"
-            href="https://twitter.com/DigitalPets1" // change to twitter address
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-           <div className="text-white">Customize</div>
-
-          
-          </a>
-         
-              <a  style={{ backgroundColor:"#FFB261" }}
-            className="navbar-brand col-sm-3 col-md-2 mr-0"
-            href="https://twitter.com/DigitalPets1" // change to twitter address
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-           <div className="text-white">Sim Market</div>
+        
 
           
           </a>
@@ -190,20 +158,30 @@ class App extends Component {
 
           <ul className="navbar-nav px-3">
             <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
-              <small  className="addresscolor"><span id="account"> {this.state.account}</span></small>
+              <small  className="#c8bbb1"><span id="account"> {this.state.account}</span></small>
             </li>
           </ul>
         </nav>
+
+
+
         <div className="container-fluid mt-5">
           <div className="row">
-            <main role="main" className="col-lg-10 d-flex text-center">
+
+
+
+
+
+
+
+            <main role="main" className="col-lg-10 d-flex text-center ">
  
 
 
 
-          <div  className="mr-3 ml-auto  container-fluid mt-5 ">
+          <div  className="  col-auto text-center">
 
-          <h5>Sim Name</h5>
+          <h5 >Sim Name</h5>
       <h4>  </h4>
           <h5>Gender</h5>
     <h4></h4>
@@ -218,11 +196,11 @@ class App extends Component {
     </div>
     
     
+    
 
 
 
-
-              <div className="content mr-auto ">
+              <div className="">
              
                 <form onSubmit={(event) => {
                   event.preventDefault()
@@ -241,7 +219,7 @@ class App extends Component {
                     type='text'
                     className='form-control mb-1'
                      maxLength="20"
-                    placeholder='example: jay Creator'
+                    placeholder='example: Sim the Creator'
                     ref={(input) => {this.color = input}}
                   />
                  
@@ -285,7 +263,7 @@ class App extends Component {
                   <input
                     type='submit'
                     onClick={this.onClickCreateDialog}
-                    style={{ backgroundColor:"#FFB261" }}
+                    style={{ backgroundColor:"#c8bbb1" }}
                     className='btn btn-block btn-primary '
                     value='Create Sim'
                   />
@@ -294,25 +272,32 @@ class App extends Component {
               </div>
 
 
+              <div className="col-lg-3 text-center ">
+         <h5>add image add here</h5>
 
-
-               
+               </div>
 
 
             </main>
           </div>
+
+
           <hr/>
           
-               <h4 className="col-lg-10 d-flex text-center" className="text-white" style={{ backgroundColor:"#FFB261" }}   >
+               <h4 className="col-lg-10 d-flex text-center" className="text-white" style={{ backgroundColor:"#c8bbb1" }}   >
                All Crypto Sims</h4>
                 <input
                     type='submit'
                     onClick={this.updateClick}
-                    style={{ backgroundColor:"#FFB261" }}
+                    style={{ backgroundColor:"#c8bbb1" }}
                     className='btn btn-block btn-primary col-lg-1   '
                     value='Update'
                   />
              
+
+
+
+
           <div className="row text-center">
 
         
@@ -324,7 +309,9 @@ class App extends Component {
 
                 <div key={key} className="col-md-4 mb-2">
                 
-                 <div className="token " style={{ backgroundImage: `url(${images[key]})` }}></div>
+                 <div className="token " style={{ backgroundImage: `url(${images[key]})` }}>
+              
+                 </div>
                 <div text>Sim {key}</div>
                  <button disabled className="namebutton text-white"  >
                   
@@ -351,7 +338,6 @@ class App extends Component {
              Secret
         </button>
       </div>
-
       
     </div>
 

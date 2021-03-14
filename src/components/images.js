@@ -10,17 +10,19 @@ import img3 from "../img/tile003.png";
 import img4 from "../img/tile004.png";
 import img5 from "../img/tile005.png";
 import img6 from "../img/tile006.png";
-import alien from "../img/bluealien.png";
-import creator from "../img/creatornft.png";
+
+
 import anim from "../img/anim.gif";
-import anim2 from "../img/anim2.gif";
-import anim3 from "../img/anime3.gif";
+import anim2 from "../img/anime3.gif";
+import creator from "../img/creatorsim.gif";
+import creator2 from "../img/creator.gif";
+import programmer from "../img/programmer.gif";
+
 export default [
 
    
-   anim2,anim3,anim3, anim3,anim3,anim3, anim3,anim3,anim3,
-    anim3,anim3,anim3, anim3,anim3,anim3, anim3,anim3,anim3,
-    anim3,anim3,anim3, anim3,anim3,anim3, anim3,anim3,anim3,
+   creator2,programmer,anim2, anim2,anim2,anim2, anim2,anim2,anim2,anim2,
+   anim2,anim2,anim2, anim2,anim2,anim2, anim2,anim2,anim2,anim2,
     img2,img3,img4,img5,img6,
  
 
