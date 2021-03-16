@@ -1,0 +1,75 @@
+﻿/* Styles go here */
+
+
+.ownerbutton {
+  
+  height: 26px;
+  width: 60px;
+    background-color: #FFB261;
+  border-radius: 0%;
+  display: inline-block;
+ 
+}
+.secretbutton {
+  
+  height: 26px;
+  width: 60px;
+    background-color: #FFB261;
+  border-radius: 0%;
+  display: inline-block;
+ 
+}
+.namebutton {
+  
+  height: 26px;
+  width: 200px;
+    background-color: #FFB261;
+  border-radius: 0%;
+  display: inline-block;
+ 
+}
+.back {
+ 
+    background-color: #FFFFFF;
+ 
+ 
+}
+
+
+.addresscolor {
+ 
+    background-color: #FFB261;
+ 
+ 
+}
+
+
+.token {
+  
+  height: 238px;
+  width: 400px;
+   border-radius: 30%;
+
+ 
+  display: inline-block;
+ 
+}
+
+.token:focus, .token:hover {
+  animation: wobble 1s 1;
+}
+
+@keyframes wobble {
+  25% {
+    transform: rotate(12deg);
+  }
+  50% {
+    transform: rotate(-12deg);
+  }
+  75% {
+    transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
