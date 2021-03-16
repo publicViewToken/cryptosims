@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Web3 from 'web3'
 import './App.css';
-import Color from '../abis/Color.json'
+import CryptoSims from '../abis/CryptoSims.json'
 import background from "../img/tile002.png";
 import Dialog from 'react-bootstrap-dialog'
 import images from '../components/images'
+import ad from '../img/simad.png'
 import ReactTooltip from "react-tooltip";
 
 
@@ -64,22 +65,45 @@ class App extends Component {
     const accounts = await web3.eth.getAccounts()
     this.setState({ account: accounts[0] })
 
- 
+ var addname = "f"
   //const planet = ""
     const networkId = await web3.eth.net.getId()
-    const networkData = Color.networks[networkId]
+    const networkData = CryptoSims.networks[networkId]
     if(networkData) {
-      const abi = Color.abi
+      const abi = CryptoSims.abi
       const address = networkData.address
       const contract = new web3.eth.Contract(abi, address)
       this.setState({ contract })
+
       const totalSupply = await contract.methods.totalSupply().call()
       this.setState({ totalSupply })
+
+
+      
+      
+     // for (var ii = -1; ii <= totalSupply; ii++) {
+      //  const nameof   =  await contract.methods.digitmon(ii+1).call()
+       //  this.setState({ nameof})
+       // this.setState({
+       //   names: [...this.state.names, nameof]
+      //  })
+     // }
+            
+         //   this.setState({ nameof})
+         //   this.setState({
+       //   names: [...this.state.names, nameof]
+     //   })
+     
+         //   this.setState({
+
+
             const colorlevel = await contract.methods.digitmon(0).call()
       this.setState({ colorlevel })
+      
+        this.setState({ totalSupply})
       // Load Colors
       for (var i = 1; i <= totalSupply; i++) {
-        const color = await contract.methods.digitmon(i - 1).call()
+        const color = await contract.methods.digitmon(i-1).call()
         this.setState({
           colors: [...this.state.colors, color]
         })
@@ -87,10 +111,14 @@ class App extends Component {
     } else {
       window.alert('Smart contract not deployed to detected network.')
     }
+
+
+
+
   }
   
   mint = (color, gender, haircolor,eyecolor, headcolor,secret) => {         //send({ from: this.state.account, value:0.007*10**18 }) for payment
-    this.state.contract.methods.mint(color, gender, haircolor,eyecolor, headcolor,secret).send({ from: this.state.account, value:0.03*10**18 })
+    this.state.contract.methods.mint("@"+color, gender, haircolor,eyecolor, headcolor,"Secret - "+secret).send({ from: this.state.account, value:0.05*10**18 })
     .once('receipt', (receipt ) => { 
       this.setState({
       
@@ -114,7 +142,11 @@ class App extends Component {
       totalSupply: 0,
       colors: [],
        showMenu: false,
-      colorlevel: 0
+      colorlevel: 0,
+       
+      //nameof: '',
+      //names: [this.nameof]
+      
     }
      
     
@@ -220,7 +252,7 @@ class App extends Component {
                     className='form-control mb-1'
                      maxLength="20"
                     placeholder='example: Sim the Creator'
-                    ref={(input) => {this.color = input}}
+                    ref={(input) => {this.color = input }}
                   />
                  
                     <input
@@ -256,9 +288,9 @@ class App extends Component {
                     <input
                     type='text'
                     className='form-control mb-1'
-                     maxLength="250"
+                     maxLength="400"
                     placeholder='Secret: add twitter, email, or info'
-                    ref={(secretin) => {this.secret = secretin}}
+                    ref={(secretin) => {this.secret =  secretin}}
                   />
                   <input
                     type='submit'
@@ -273,7 +305,8 @@ class App extends Component {
 
 
               <div className="col-lg-3 text-center ">
-         <h5>add image add here</h5>
+        
+         <img src={ad}  width = '860' height = '290'/>
 
                </div>
 
@@ -307,15 +340,15 @@ class App extends Component {
 
               return(
 
-                <div key={key} className="col-md-4 mb-2">
+                <div key={key } className="col-md-4 mb-2">
                 
                  <div className="token " style={{ backgroundImage: `url(${images[key]})` }}>
               
                  </div>
                 <div text>Sim {key}</div>
                  <button disabled className="namebutton text-white"  >
-                  
-             <div>{color.name}</div>
+                 
+             <div> {this.state.colors[key].name}</div>
         </button>
                   
               
@@ -325,7 +358,7 @@ class App extends Component {
 
                   <div>
                    <div data-tip data-for="registerTip">
-                   <button  className="ownerbutton text-white" onClick={value => alert(`You can use this address to talk to this Crypto Sims: `+ "\n" + color.simowner)} >
+                   <button  className="ownerbutton text-white" onClick={value => alert(`You can use this address to talk to this Crypto Sims: `+ "\n" + this.state.colors[key].simowner)} >
              Owner
         </button>
       </div>
@@ -334,7 +367,7 @@ class App extends Component {
     </div>
       <div>
                    <div data-tip data-for="registersecret">
-                   <button  className="ownerbutton text-white" onClick={value => alert( color.secret)}>
+                   <button  className="ownerbutton text-white" onClick={value => alert(this.state.colors[key].secret)}>
              Secret
         </button>
       </div>

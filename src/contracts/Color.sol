@@ -68,7 +68,7 @@ contract Color is ERC721 {
  // }
 
  uint maxSims = 100000; //100k
-
+//totalSupply = 0;
   //only creater makes people
   function mint(string memory _name, string memory _gender, string memory _haircolor, string memory _eyecolor, string memory _headcolor, string memory _secret) public payable {
   require( totalSupply <= maxSims);// 100k sims can only be created

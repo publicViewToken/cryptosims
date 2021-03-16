@@ -1,5 +1,5 @@
-const Color = artifacts.require("Color");
+const CryptoSims = artifacts.require("CryptoSims");
 
 module.exports = function(deployer) {
-  deployer.deploy(Color);
+  deployer.deploy(CryptoSims);
 };

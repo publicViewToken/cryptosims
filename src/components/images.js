@@ -23,6 +23,9 @@ export default [
    
    creator2,programmer,anim2, anim2,anim2,anim2, anim2,anim2,anim2,anim2,
    anim2,anim2,anim2, anim2,anim2,anim2, anim2,anim2,anim2,anim2,
+   anim2,anim2,anim2, anim2,anim2,anim2, anim2,anim2,anim2,anim2,
+   anim2,anim2,anim2, anim2,anim2,anim2, anim2,anim2,anim2,anim2,
+   anim2,anim2,anim2, anim2,anim2,anim2, anim2,anim2,anim2,anim2,
     img2,img3,img4,img5,img6,
  
 
