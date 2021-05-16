@@ -118,7 +118,7 @@ class App extends Component {
   }
   
   mint = (color, gender, haircolor,eyecolor, headcolor,secret) => {         //send({ from: this.state.account, value:0.007*10**18 }) for payment
-    this.state.contract.methods.mint("@"+color, gender, haircolor,eyecolor, headcolor,"Secret - "+secret).send({ from: this.state.account, value:0.09*10**18 })
+    this.state.contract.methods.mint("@"+color, gender, haircolor,eyecolor, headcolor,"Secret - "+secret).send({ from: this.state.account, value:0.05*10**18 })
     .once('receipt', (receipt ) => { 
       this.setState({
       
